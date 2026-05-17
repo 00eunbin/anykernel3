@@ -4,16 +4,16 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=ExampleKernel by osm0sis @ xda-developers
+kernel.string=Fearless Kernel for Ginkgo by aerichandesu
 do.devicecheck=1
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=maguro
-device.name2=toro
-device.name3=toroplus
-device.name4=tuna
+device.name1=ginkgo
+device.name2=willow
+device.name3=
+device.name4=
 device.name5=
 supported.versions=
 supported.patchlevels=
@@ -29,7 +29,7 @@ set_perm_recursive 0 0 750 750 $RAMDISK/init* $RAMDISK/sbin;
 } # end attributes
 
 # boot shell variables
-BLOCK=/dev/block/platform/omap/omap_hsmmc.0/by-name/boot;
+BLOCK=/dev/block/bootdevice/by-name/boot;
 IS_SLOT_DEVICE=0;
 RAMDISK_COMPRESSION=auto;
 PATCH_VBMETA_FLAG=auto;
@@ -67,7 +67,7 @@ write_boot; # use flash_boot to skip ramdisk repack, e.g. for devices with init_
 #} # end attributes
 
 # init_boot shell variables
-#BLOCK=init_boot;
+#BLOCK=/dev/block/bootdevice/by-name/boot;
 #IS_SLOT_DEVICE=1;
 #RAMDISK_COMPRESSION=auto;
 #PATCH_VBMETA_FLAG=auto;
@@ -83,7 +83,7 @@ write_boot; # use flash_boot to skip ramdisk repack, e.g. for devices with init_
 
 
 ## vendor_kernel_boot shell variables
-#BLOCK=vendor_kernel_boot;
+#BLOCK=/dev/block/bootdevice/by-name/boot;
 #IS_SLOT_DEVICE=1;
 #RAMDISK_COMPRESSION=auto;
 #PATCH_VBMETA_FLAG=auto;
@@ -105,7 +105,7 @@ write_boot; # use flash_boot to skip ramdisk repack, e.g. for devices with init_
 #} # end attributes
 
 # vendor_boot shell variables
-#BLOCK=vendor_boot;
+#BLOCK=/dev/block/bootdevice/by-name/boot;
 #IS_SLOT_DEVICE=1;
 #RAMDISK_COMPRESSION=auto;
 #PATCH_VBMETA_FLAG=auto;
